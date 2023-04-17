@@ -14,11 +14,18 @@ html{
     font-size: 62.5%;/*acada 10px vira um rem*/
 }
 
-
-
 .tit-sec{
     text-align: center;
     font-size: 5rem;
     margin: 5% 0;
 }
-
+/*BreakPoint 1 = 627px*/
+@media (max-width:627px){
+    .cabecalho nav{
+        width: 30%;
+        flex-wrap: nowrap;
+    }
+    .cabecalho a{
+        font-size: 2em;
+    }
+}
