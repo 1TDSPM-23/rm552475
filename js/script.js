@@ -48,24 +48,61 @@ console.log("Olá Mundo");
         
         //REGRAS DO CONST
         //1° REGRA: INICIALIZAR NA DECLARAÇÃO
-        const nome3 = "Violante";
+       // const nome3 = "Violante";
         //2° REGRA: NÃO PODE SER ALTERAR DURANTE O FLUXO DO PROGRAMA
         //nome3= "Jonathan"
 
         //obs sempre utilizar nomes maiusculos para as variaveis const
-        const PI = 3.14;
+       // const PI = 3.14;
 
         
         //var nome1 = "Beatriz";
         //let nome2 ="Mateus";
 
-        var nome = "Beatriz"
-        var nome2= ""
-        if(nome != ""){
+       // var nome = "Beatriz"
+        // nome2= ""
+        /*if(nome != ""){
             let nome = "Robson"
             //PARA TIRAR A LET DO ESCOPO
             nome2 = nome
-        }
-        //QUAL O NOME QUE SERÁ IMPRESSO 
+       }*/
+      /*  //QUAL O NOME QUE SERÁ IMPRESSO 
         console.log(nome)
-        console.log(nome2)
+        console.log(nome2)*/
+
+        //ARRAY E SEU METODOS
+       let frutas = ["Banana","maçã","morango","carambola","acerola","laranja"];
+       //IMPRINDO ARRAY
+       console.log(frutas)
+       console.table(frutas)
+       console.log(frutas[4])
+
+       //ADICIONAR UM ITEM AO FINAL DO ARRAY COM O METODO PUSH(ITEM)
+       frutas.push("melão")
+       console.log(frutas)
+       
+       //ADICIONAR UM ITEM AO inicio DO ARRAY COM O METODO PUSH(ITEM)
+       frutas.push("caju")
+       console.log(frutas)
+
+       //ADICIONAR UM ITEM AO inicio DO ARRAY COM O METODO PUSH(ITEM)
+       frutas.pop()
+       console.log(frutas)
+       
+       //ADICIONAR UM ITEM AO inicio DO ARRAY COM O METODO PUSH(ITEM)
+       frutas.shift()
+       console.log(frutas)
+
+       //PARA LOCALIZAR UM ITEM DO ARRAY , UTILIZAMOS O METODO INDEXOF(ITEMNOME)
+       /*let indice = frutas.indexOf("morango")
+       console.log(frutas[indice])*/
+
+       //apagando o item localizado no array
+       let indice = frutas.indexOf("carambola")
+       console.log("fruta q estava no indice antes da remoção: "+frutas[indice])
+       frutas.splice(indice,1)//metodo utilizado para apagar o item desejado
+       console.log("fruta q estava no indice depois da remoção: "+frutas[indice])
+
+       frutas.forEach((fruta)=>{
+        console.log("Olha ele: "+fruta)
+       });
