@@ -69,7 +69,7 @@ console.log("Olá Mundo");
       /*  //QUAL O NOME QUE SERÁ IMPRESSO 
         console.log(nome)
         console.log(nome2)*/
-
+       /*
         //ARRAY E SEU METODOS
        let frutas = ["Banana","maçã","morango","carambola","acerola","laranja"];
        //IMPRINDO ARRAY
@@ -96,7 +96,7 @@ console.log("Olá Mundo");
        //PARA LOCALIZAR UM ITEM DO ARRAY , UTILIZAMOS O METODO INDEXOF(ITEMNOME)
        /*let indice = frutas.indexOf("morango")
        console.log(frutas[indice])*/
-
+       /*
        //apagando o item localizado no array
        let indice = frutas.indexOf("carambola")
        console.log("fruta q estava no indice antes da remoção: "+frutas[indice])
@@ -105,4 +105,9 @@ console.log("Olá Mundo");
 
        frutas.forEach((fruta)=>{
         console.log("Olha ele: "+fruta)
-       });
+       });*/
+
+       //MANIPULANDO O INPUT DO FORM
+
+       const inputUser = document.getElementById("idNm")
+       console.log(inputUser.value)
