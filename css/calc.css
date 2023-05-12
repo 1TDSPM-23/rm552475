@@ -1,11 +1,17 @@
 .calc{
 display: flex;
+flex-wrap: wrap;
 align-items: center;
 justify-content: center;
+
 }
 .btn-calc{
 display: flex;
 flex-wrap: wrap;
+flex-wrap: 1;
+padding: 0, 5%;
+justify-content: center;
+width: 20vh;
 }
 .btn-calc button{
     flex-grow: 1;
