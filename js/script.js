@@ -1,4 +1,4 @@
-console.log("Olá Mundo");
+//console.log("Olá Mundo");
 
 //Comentario linha
         /*comentario bloco*/

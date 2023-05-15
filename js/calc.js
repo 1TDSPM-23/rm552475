@@ -29,11 +29,12 @@ const resultadoDasOperacoes =(visor) => {
         if(visor.value[visor.value.length] == "+"|| visor.value[visor.value.length] == "-"
         || visor.value[visor.value.length] == "*" || visor.value[visor.value.length] == "/"){
 
-            visor.value = visor.value.slice(visor.value.length);
+            visor.value = visor.value.slice(visor.value.length-1);
                 
         }
         else{
-            visor.value.shift();
+            visor.value.slice(1);
+            
         }
     }
     
