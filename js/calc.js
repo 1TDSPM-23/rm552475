@@ -44,3 +44,10 @@ const resultadoDasOperacoes =(visor) => {
     
     
 }
+function apagaNumero (botao,visor){
+    if(botao.value == "X"){
+        
+        visor.value.remove(botao.value.length-1)
+        
+    }
+}

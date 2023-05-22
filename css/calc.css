@@ -1,9 +1,24 @@
 .calc{
 display: flex;
 flex-wrap: wrap;
-align-items: center;
 justify-content: center;
+padding: 2% 1.4%;
+border: 2px solid rgba(32, 32, 217, 0.744);
+border-radius: 3%;
+margin-top: 8em;
+margin-left: 42%;
+width: 15%;
 
+}
+.visor-calc{
+    width: 10%;
+    padding: 9% 0% 9% 9.6%;
+    align-items: center;
+    justify-content: center;
+}
+.visor-calc #idVisor{    
+    margin-left: 16%;
+    
 }
 .btn-calc{
 display: flex;
@@ -11,7 +26,7 @@ flex-wrap: wrap;
 flex-wrap: 1;
 padding: 0, 5%;
 justify-content: center;
-width: 20vh;
+
 }
 .btn-calc button{
     flex-grow: 1;

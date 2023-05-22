@@ -35,7 +35,7 @@ console.log("CPF do Usuário : "+usuario1.cpf)
 //listaDeUsuarios.push(usuario1)
 //listaDeUsuarios.push(usuario2)
 
-let listaDeUsuarios = [{
+/*let listaDeUsuarios = [{
     nomeCompleto :"Enio Casper",
     nomeUsuario :"enio",
     senhaUsuario :"123456",
@@ -64,7 +64,11 @@ let listaDeUsuarios = [{
     senhaUsuario :"123456",
     ccUsuario :"sp"
 }
-];
+];*/
+
+//localStorage.setItem("key", objeto);
+localStorage.setItem("listaUser",JSON.stringify(listaDeUsuarios) );
+
 
 const formLogin = document.querySelector("form[name ='frm01']")
 
@@ -89,7 +93,9 @@ botaoSubmit.addEventListener("click", ()=>{
     //Objeto usuario validado
     let usuarioValidado = {};
     
+    //Recuperanddo a lista de usarios do localStorage
 
+    let listaDeUsuarios =JSON.parse(localStorage.getItem("listaUser")) ;
 
     if(usuarioLogado.nomeUsuarioLogado != "" 
     && usuarioLogado.senhaUsuarioLogado != "" 
@@ -117,23 +123,42 @@ botaoSubmit.addEventListener("click", ()=>{
     else{
         console.log("Existe algum campo sem preenchimento")
     }
-    if(usuarioValidado != null){
+    if(usuarioValidado.nomeUsuario != undefined){
 
-        msgStatus.setAttribute("style", "color:#00ff00")
-                msgStatus.innerHTML =`<span><strong>O usuário ${usuarioValidado.nomeCompleto} 
+        msgStatus.setAttribute("style", "color: #00ff00");
+                msgStatus.innerHTML =`<span><strong>O usuário 
+                ${usuarioValidado.nomeCompleto} 
                 Fez o login com Sucesso!! </strong></span>`;
+            
+                //Add o usuario validado no localStorage
+                localStorage.setItem("user-validado",
+                JSON.stringify (usuarioValidado))
+            
+                //Criando token de autenticação
+                
+                const token = Math.random().toString(16).substring(2)+
+                 Math.random().toString(16).substring(2);
+                
+                //Add o token no localStorage
+                localStorage.setItem("user-token",token)
 
+                //Redirect
+                setTimeout(()=>{
+                window.location.href ="../index.html";
+            },3000)
+            
     }
     else{
         msgStatus.setAttribute("style", "color:#ff0000")
-                msgStatus.innerHTML =`<span><strong>O usuário ${usuarioValidado.nomeCompleto} 
-                Fez o login com Sucesso!! </strong></span>`;
+                msgStatus.innerHTML =`<span><strong>O nome ou senha do usuário 
+                ${usuarioValidado.nomeCompleto} 
+                incorretos!! </strong></span>`;
     }  
 })
 
 function validaFormularioCompleto(){
 
-    formLogin.OnpreventDefault();
+    //formLogin.OnpreventDefault();
 
     const inputUser = document.querySelector("#idNm")
     const inputPass = document.querySelector("#idPass")
@@ -219,16 +244,3 @@ function validaFormularioCompleto(){
     
 
 
-//    let valida = false
-
-//    valida=validaFormularioCompleto(inputUser,inputPass ,selCusto)
-
-//    if(valida == true){
-
-//        window.location.assign("../index.html")
-
-//    }
-//    else{
-//        window.location.assign("../index.html")
-//    }
-//})
