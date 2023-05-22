@@ -115,9 +115,9 @@
       if(localStorage.getItem("user-token")){
         const divWelcome = document.querySelector("#welcome");
 
-       const usuarioValidado = JSON.parse (localStorage.getItem("user-validado"));
+       const usuarioValidado = JSON.parse(localStorage.getItem("user-validado"));
 
-       divWelcome.innerHTML = usuarioValidado.nomeCompleto
+       divWelcome.innerHTML = usuarioValidado.nomeCompleto;
 
       const botaoSair = document.querySelector("#btnSair");
       botaoSair.addEventListener("click",() =>{

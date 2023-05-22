@@ -67,7 +67,7 @@ console.log("CPF do Usuário : "+usuario1.cpf)
 ];*/
 
 //localStorage.setItem("key", objeto);
-localStorage.setItem("listaUser",JSON.stringify(listaDeUsuarios) );
+//localStorage.setItem("listaUser",JSON.stringify(listaDeUsuarios) );
 
 
 const formLogin = document.querySelector("form[name ='frm01']")
@@ -77,7 +77,7 @@ const msgStatus = document.querySelector("#msg")
 const botaoSubmit= document.querySelector("#btnSubmit")
 
 botaoSubmit.addEventListener("click", ()=>{
-    formLogin.OnpreventDefault();
+   
 
     const inputUser = document.querySelector("#idNm")
     const inputPass = document.querySelector("#idPass")
@@ -127,8 +127,7 @@ botaoSubmit.addEventListener("click", ()=>{
 
         msgStatus.setAttribute("style", "color: #00ff00");
                 msgStatus.innerHTML =`<span><strong>O usuário 
-                ${usuarioValidado.nomeCompleto} 
-                Fez o login com Sucesso!! </strong></span>`;
+                ${usuarioValidado.nomeCompleto} fez o login com SUCESSO!!</strong></span>`;
             
                 //Add o usuario validado no localStorage
                 localStorage.setItem("user-validado",
@@ -144,17 +143,16 @@ botaoSubmit.addEventListener("click", ()=>{
 
                 //Redirect
                 setTimeout(()=>{
-                window.location.href ="../index.html";
+                window.location.href = "../index.html";
             },3000)
             
     }
     else{
-        msgStatus.setAttribute("style", "color:#ff0000")
-                msgStatus.innerHTML =`<span><strong>O nome ou senha do usuário 
-                ${usuarioValidado.nomeCompleto} 
-                incorretos!! </strong></span>`;
+        msgStatus.setAttribute("style", "color : red")
+                msgStatus.innerHTML =`<span><strong>Nome de usuário 
+                ou senha inválidos...</strong></span>`;
     }  
-})
+});
 
 function validaFormularioCompleto(){
 
@@ -239,7 +237,7 @@ function validaFormularioCompleto(){
         else{
             labelPass.setAttribute("style","color: green")
         }
-    })
+    });
 
     
 
